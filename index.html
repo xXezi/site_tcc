@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME - HELP GYM</title>    
     <link
         rel="stylesheet"
-        href="style_grid.css"
+        href="./css/style.css"
         media="print"
         onload="this.media='all'"/>
 
-    <script type="text/javascript" src="pesquisa_input.js"></script>   
+    <script type="text/javascript" src="./js/pesquisa.js"></script>
 </head>
 <body class="background">
     <section id="section_conteudo_pagina">
@@ -20,9 +20,9 @@
             <div class="div_conteudo_header">
 
                 <!-- IMAGEM LOGO DA PÁGINA -->
-                <div class="div_imagem_logo">                    
+                <div class="div_imagem_logo">
                     <a href="index.html">
-                         <img id="img_logo" src="imagens/logo_sem_fundo.png" alt="Logo">
+                         <img id="img_logo" src="./imagens/logo_sem_fundo.png" alt="Logo">
                     </a>
                 </div>
 
@@ -39,9 +39,9 @@
                         <li>
                             <a href="#">Biotipos</a>
                             <ul class="ul_link_oculto">
-                                <li><a target="_self" href="bio_ectomorfo_grid.html">Ectomorfo</a></li>
-                                <li><a target="_self" href="bio_mesomorfo_grid.html">Mesomorfo</a></li>
-                                <li><a target="_self" href="bio_endomorfo_grid.html">Endomorfo</a></li>
+                                <li><a target="_self" href="./paginas/bio_ectomorfo.html">Ectomorfo</a></li>
+                                <li><a target="_self" href="./paginas/bio_mesomorfo.html">Mesomorfo</a></li>
+                                <li><a target="_self" href="./paginas/bio_endomorfo.html">Endomorfo</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -49,21 +49,21 @@
                         <li>
                             <a href="#">Treinos</a>
                             <ul class="ul_link_oculto">
-                                <li><a href="#">Peito</a></li>
-                                <li><a href="#">Costa</a></li>
-                                <li><a href="#">Triceps</a></li>
-                                <li><a href="#">Biceps</a></li>
-                                <li><a href="#">Abdomem</a></li>
-                                <li><a href="#">Panturilha</a></li>
-                                <li><a href="#">Glúteo</a></li>
-                                <li><a href="#">Perna</a></li>
-                                <li><a href="#">Antebraço</a></li>
+                                <li><a href="./paginas/treino_peito.html">Peito</a></li>
+                                <li><a href="./paginas/treino_costa.html">Costa</a></li>
+                                <li><a href="./paginas/treino_triceps.html">Triceps</a></li>
+                                <li><a href="./paginas/treino_biceps.html">Biceps</a></li>
+                                <li><a href="./paginas/treino_abdomen.html">Abdômen</a></li>
+                                <li><a href="./paginas/treino_paturrilha.html">Panturrilha</a></li>
+                                <li><a href="./paginas/treino_gluteo.html">Glúteo</a></li>
+                                <li><a href="./paginas/treino_perna.html">Perna</a></li>
+                                <li><a href="./paginas/treino_antebraco.html">Antebraço</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul id="posicao_ul_3" class="ul_link_visivel">
                         <li>                
-                            <a href="suplementacao_grid.html">Suplementação</a>                          
+                            <a href="./paginas/suplementacao.html">Suplementação</a>
                         </li>
                     </ul>
                 </div>
@@ -71,13 +71,12 @@
                 <!-- DIV DO CAMPO DE PESQUISA PÁGINA  -->
                 <div id="div_header_4">
                     <button id="botao_pesquisa" class="botao_pesquisa">
-                        <img src="imagens/icons8-pesquisar-50.png" alt="Lupa">
+                        <img src="./imagens/icone_lupa.png" alt="Lupa">
                     </button>
                     <input id="campo_pesquisa" type="text" name="campo_pesquisa">
                     <div id="resultados_treinos"></div>
                     <div id="resultados_biotipos"></div>
                 </div>
-
             </div>
         </header>
 
@@ -88,7 +87,7 @@
             <div class="div_conteudo_principal">
                 
                 <!-- DIVS DE CONTEÚDOS ESPECÍFICOS TEXTOS E IMAGENS -->
-                <div id="posicao_conteudo_3" class="div_conteudo_texto">       
+                <div id="posicao_conteudo_3_texto" class="div_conteudo_texto">       
                     <h1 class="titulo_conteudo_h1">TITULO 1 CONTEÚDO</h1>
                     <p class="paragrafo_conteudo_p">
                         Lorem ipsum dolor sit amet, 
@@ -104,7 +103,7 @@
                     </p>   
                 </div>
 
-                <div id="posicao_conteudo_2" class="div_conteudo_texto">                
+                <div id="posicao_conteudo_2_texto" class="div_conteudo_texto">                
                     <h1 class="titulo_conteudo_h1">TITULO 2 CONTEÚDO</h1>
                     <p class="paragrafo_conteudo_p">
                         Lorem ipsum dolor sit amet, 
@@ -121,17 +120,15 @@
                 </div>                            
 
                 <!-- DIV DAS IMAGENS PRINCIPAIS -->
-                <div id="posicao_conteudo_1" class="div_conteudo_imagem">
+                <div id="posicao_conteudo_1_imagem" class="div_conteudo_imagem">
                     <figure class="figure_conteudo_imagem">
-                        <img id="imagem_conteudo_1" src="imagens/RamonCebum.jpg" alt="treino academia">
-                        <!-- <figcaption class="legenda_imagem">LEGENDA IMAGEM</figcaption> -->
+                        <img id="imagem_conteudo_1" src="./imagens/RamonCebum.jpg" alt="treino academia">                        
                     </figure>
                 </div>
 
-                <div id="posicao_conteudo_4" class="div_conteudo_imagem">
+                <div id="posicao_conteudo_4_imagem" class="div_conteudo_imagem">
                     <figure class="figure_conteudo_imagem">
-                        <img id="imagem_conteudo_2" src="imagens/Arnold.jpg" alt="treino">
-                        <!-- <figcaption class="legenda_imagem">LEGENDA IMAGEM</figcaption> -->
+                        <img id="imagem_conteudo_2" src="./imagens/Arnold.jpg" alt="treino">
                     </figure>
                 </div>
             </div>
@@ -141,7 +138,6 @@
         <footer class="footer_pagina">
             FOOTER HELP GYM
         </footer>
-    </section>
-   
+    </section>   
 </body>
 </html>

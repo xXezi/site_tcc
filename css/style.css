@@ -1,0 +1,675 @@
+*{
+    margin: 0;
+    padding: 0;   
+    font-family: Arial;
+    font-size: 16px;
+}
+
+/* IMPORTAÇÃO DA FONTE DO TÍTULO DO SITE */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+.libre-baskerville-bold {
+    font-family: "Libre Baskerville", serif;    
+    text-decoration: none;
+    text-shadow: 2px 1px 1px black;
+    font-size: 5rem; /* 80px */
+    color: rgb(255, 255, 255);
+    height: 100%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-style: normal;
+    text-decoration: none;
+}
+
+/* IMAGEM DE FUNDO DA PÁGINA */
+.background {
+    background-image: url(../imagens/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+/* SECTION DE TODO CONTEÚDO DO SITE */
+#section_conteudo_pagina{
+    display: grid;    
+    height: 100vh;
+    
+    grid-template-areas:
+      "header header header header header"      
+      ".   main   main   main   . "
+      "footer footer footer footer footer";
+
+    grid-template-rows: 0fr auto 0fr;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}
+
+/* CLASSES E SUAS POSIÇÕES NA PÁGINA */
+/* HEADER TOPO DA PÁGINA */
+.header_pagina {
+    grid-area: header;
+    background-color: rgb(238, 238, 238);  
+}
+/* DIV CONTEÚDO HEADER, IMG LOGO, TITULO, LINKS */
+.div_conteudo_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;    
+}
+
+/* IMAGEM LOGO */
+.div_imagem_logo {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column: 2;
+    position: relative;
+    align-content: center;
+    margin: 0 auto; 
+}
+#img_logo {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* DIV E ESTILO DO TÍTULO DA PÁGINA*/
+.div_titulo_pagina {
+    grid-column: 3;
+    text-align: center;
+}
+/* .class_titulo_site a {
+    text-decoration: none;
+    text-shadow: 2px 1px 1px black;
+    font-family: CAMPUS PERSONAL USE;
+    font-size: clamp(1.5em, 3em + 4vw, 5em);
+    color: rgb(255, 255, 255);
+    height: 100%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+} */
+
+/* DIV LINKS DA PÁGINA */
+.div_links_header {
+    grid-column: 3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(238, 238, 238); 
+}
+#posicao_ul_1 {
+    grid-column: 1;
+}
+#posicao_ul_2 {
+    grid-column: 2;
+}
+#posicao_ul_3 {
+    grid-column: 3;
+}
+/* ESTILO DOS LINKS VISÍVEIS */
+.ul_link_visivel {
+    text-align: center;
+    align-content: center;
+    list-style: none;    
+}
+.ul_link_visivel a {
+    color: black;    
+    text-decoration: none;
+    /* font-size: clamp(0.2em, 0.9em + 1vw, 1.3em); */
+    font-size: 1.3rem;
+}
+.ul_link_visivel:hover {       
+    border: 1px solid black;
+    background-color: white;
+}
+
+/* ESTILO DOS LINKS OCULTOS */
+.ul_link_oculto {
+    display: none;
+    position: absolute;
+    list-style: none;
+
+    
+}
+.ul_link_oculto a {
+    display: block;     
+    text-align: center;
+    background-color: rgb(187, 187, 187);
+    /* background-color: blue; */
+    padding: 8px;        
+}
+.ul_link_oculto a:hover {
+    background-color: white;
+}
+.ul_link_visivel:hover .ul_link_oculto {
+    display: block;
+    z-index: 1;
+    border: 1px solid black;
+    width: 250px;
+}
+
+/* DIV DO CAMPO DE PESQUISA PÁGINA */
+#div_header_4 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column: 4;
+    /* background-color: #6366f1; */
+    position: relative;
+    align-content: center;
+}
+.botao_pesquisa {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+.botao_pesquisa img {
+    width: 25px;
+    height: 25px;
+}
+#campo_pesquisa {
+    width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-left: 10px;
+    opacity: 0;
+    transition: width 0.4s ease, opacity 0.4s ease;
+    visibility: hidden;
+}
+#campo_pesquisa.show {
+    width: 200px;
+    opacity: 1;
+    visibility: visible;
+}
+/* DIV DE INFORMAÇÕES DO CAMPO DE PESQUISA*/
+#resultados_treinos {
+    position: absolute;
+    color: black;
+    background-color: rgb(173, 173, 173);
+}
+#resultados_biotipos {
+    position: absolute;
+    color: black;
+    background-color: rgb(173, 173, 173);
+}
+
+
+/* TAG MAIN ONDE FICARÁ O CONTEÚDO PRINCIPAL DA PÁGINA */
+.main_conteudo_principal {
+    grid-area: main;
+    height: 100%;
+}
+/* DIV PRINCIPAL QUE RECEBE UM GRID PARA ORGANIZAR O CONTEÚDO */
+.div_conteudo_principal {
+    display: grid;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;    
+    /* border: 1px solid black; */
+
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* ID'S DE CADA DIV E POSICIONAMENTO DENTRO DO GRID 
+NA PÁGINA INDEX*/
+#posicao_conteudo_1_imagem {
+    grid-row: 1;
+    grid-column: 1;
+}
+#posicao_conteudo_2_texto {
+    grid-row: 2;
+    grid-column: 1;
+}
+#posicao_conteudo_3_texto {
+    grid-row: 1;
+    grid-column: 2;
+}
+#posicao_conteudo_4_imagem {
+    grid-row: 2;
+    grid-column: 2;
+}
+/* ID'S DE CADA DIV E POSICIONAMENTO DENTRO DO GRID
+NAS OUTRAS PÁGINAS */
+#posicao_conteudo_1 {
+    grid-row: 1;
+    grid-column: 1;
+}
+#posicao_conteudo_2 {
+    grid-row: 2;
+    grid-column: 1;
+}
+#posicao_conteudo_3 {
+    grid-row: 1;
+    grid-column: 2;
+}
+#posicao_conteudo_4 {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+/* ESTILO DA DIV QUE ARMAZENA CONTEÚDO DE TEXTO */
+.div_conteudo_texto {
+    margin: 10px;
+    padding: 10px;    
+    /* background-color: rgb(207, 218, 218); */
+}
+/* ESTILO DO TÍTULO DE CONTEÚDO DE TEXTO */
+.titulo_conteudo_h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem; /* 32px */
+    color: white;
+}
+/* ESTILO DE PARÁGRAFO DO CONTEÚDO DE TEXTO */
+.paragrafo_conteudo_p {
+    text-align: justify;
+    margin-top: 7px;
+    font-size: 1.04rem; /* 16px */
+    color: #fffafa;
+}
+
+/* ESTILO DA DIV QUE ARMAZENA CONTEÚDO DE IMAGEM */
+.div_conteudo_imagem {
+    margin: 10px;
+    text-align: center;
+    /* background-color: blue; */
+}
+/* TAG FIGURE QUE CONTÉM A IMAGEM */
+.figure_conteudo_imagem {
+    padding: 10px;
+    /* background-color: whit; */
+}
+/* ID DA IMAGEM 1 DA PÁGINA */
+#imagem_conteudo_1, #imagem_conteudo_2 {
+    width: 100%;
+    max-width: 300px;
+    border: 4px solid white;
+    border-radius: 5px;
+}
+/* CLASS PARA A LEGENDA DE IMAGENS */
+.legenda_imagem {
+    font-style: italic;
+    font-size: clamp(0.3em, 0.5em + 0.7vw, 0.9em);
+}
+
+/* TAG FOOTER QUE ARMAZENA O CONTEÚDO DO RODAPÉ DA PÁGINA */
+.footer_pagina {
+    grid-area: footer;
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+    font-size: 1rem;
+    background-color: rgb(173, 173, 173);
+}
+
+
+
+/* =================================================== 
+RESPONSIVO
+*/
+ @media screen and (max-width: 1283px) {
+    #section_conteudo_pagina{
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+    
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    /* IMAGEM LOGO  */
+    .div_imagem_logo {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        /* grid-column: 2; */
+        grid-column-start: 1;
+        grid-column-end: 3;
+        /* position: relative; */
+        /* background-color: green; */
+        margin: 0 auto;
+    }
+    #img_logo {
+        max-width: 200px;
+        max-height: 200px;
+        /* background-color: blue; */
+    }
+
+    /* TÍTULO DA PÁGINA */
+    .div_titulo_pagina {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        /* background-color: blue; */
+    }
+    .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;    
+        text-decoration: none;
+        text-shadow: 2px 1px 1px black;
+        font-size: 3.7rem; 
+        color: rgb(255, 255, 255);
+        height: 100%;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
+        font-style: normal;
+        text-decoration: none;
+    }
+
+    /* LINKS HEADER */
+    .div_links_header {
+        grid-column-start: 3;
+        grid-column-end: 5;        
+    }
+    .ul_link_visivel a {
+        font-size: 1.07rem;
+    }
+    .ul_link_visivel:hover .ul_link_oculto {
+        width: 215px;
+    }
+
+    /* DIV BOTÃO E CAMPO DE PESQUISA */
+    #div_header_4 {
+        margin: 0 auto;
+        grid-row: 4;
+        grid-column-start: 3;
+        grid-column-end: 5;  
+        margin-bottom: 10px;
+    }   
+    .botao_pesquisa img {
+        max-width: 22px;
+        max-height: 22px;
+    }
+    #campo_pesquisa {
+        width: 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        margin-left: 10px;
+        opacity: 0;
+        transition: width 0.4s ease, opacity 0.4s ease;
+        visibility: hidden;
+    }
+    #campo_pesquisa.show {  
+        width: 170px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* TÍTULO E TEXTO DO CONTEÚDO */
+    .titulo_conteudo_h1 {
+        font-size: 1.7rem;
+    }    
+    .paragrafo_conteudo_p {
+        font-size: 1rem;
+    }
+
+    /* TAMANHO MÁXIMO IMAGENS CONTEÚDO */
+    #imagem_conteudo_1, #imagem_conteudo_2 {
+        max-width: 250px;
+    }
+
+    /* RODAPÉ DA PÁGINA */
+    .footer_pagina {
+        font-size: 0.8rem;
+    }    
+}
+
+@media screen and (max-width: 768px){
+    #section_conteudo_pagina{
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+    
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    /* IMAGEM LOGO  */
+    .div_imagem_logo {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        /* grid-column: 1; */
+        grid-column-start: 1;
+        grid-column-end: 3;
+        position: relative;
+        /* background-color: green; */
+        margin: 0;
+    }
+    #img_logo {
+        max-width: 150px;
+        max-height: 150px;
+        /* background-color: blue; */
+    }
+
+    /* TÍTULO DA PÁGINA */
+    .div_titulo_pagina {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        /* background-color: blue; */
+    }
+    .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;    
+        text-decoration: none;
+        text-shadow: 2px 1px 1px black;
+        font-size: 2.70rem; /* 80px */
+        color: rgb(255, 255, 255);
+        height: 100%;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
+        font-style: normal;
+        text-decoration: none;
+    }
+
+    /* LINKS HEADER */
+    .div_links_header {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        gap: 10px;
+    }
+    .ul_link_visivel a {
+        font-size: 1rem;
+    }
+    .ul_link_visivel:hover .ul_link_oculto {
+        width: 120px;
+    }
+
+    /* DIV BOTÃO E CAMPO DE PESQUISA */
+    #div_header_4 {
+        margin: 0 auto;
+        grid-row: 4;
+        grid-column-start: 3;
+        grid-column-end: 5;  
+        margin-bottom: 10px;
+    }   
+    .botao_pesquisa img {
+        max-width: 20px;
+        max-height: 20px;
+    }
+    #campo_pesquisa {
+        width: 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        margin-left: 10px;
+        opacity: 0;
+        transition: width 0.4s ease, opacity 0.4s ease;
+        visibility: hidden;
+    }
+    #campo_pesquisa.show {  
+        width: 150px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* TÍTULO E TEXTO DO CONTEÚDO */
+    .titulo_conteudo_h1 {
+        font-size: 1rem;
+    }    
+    .paragrafo_conteudo_p {
+        font-size: 0.7rem;
+    }
+
+    /* TAMANHO MÁXIMO IMAGENS CONTEÚDO */
+    #imagem_conteudo_1, #imagem_conteudo_2 {
+        max-width: 150px;
+    }
+
+    /* RODAPÉ DA PÁGINA */
+    .footer_pagina {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 425px){
+    #section_conteudo_pagina{
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+    
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    /* IMAGEM LOGO  */
+    .div_imagem_logo {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        /* grid-column: 1; */
+        grid-column-start: 1;
+        grid-column-end: 3;
+        position: relative;
+        /* background-color: green; */
+        margin: 0;
+    }
+    #img_logo {
+        max-width: 100px;
+        max-height: 100px;
+        /* background-color: blue; */
+    }
+
+    /* TÍTULO DA PÁGINA */
+    .div_titulo_pagina {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        /* background-color: blue; */
+    }
+    .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;    
+        text-decoration: none;
+        text-shadow: 2px 1px 1px black;
+        font-size: 1.84rem;
+        color: rgb(255, 255, 255);
+        height: 100%;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
+        font-style: normal;
+        text-decoration: none;
+    }
+
+    /* LINKS HEADER */
+    .div_links_header {
+        /* grid-column: 3; */
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    .ul_link_visivel a {
+        font-size: 0.7rem;
+    }
+
+    /* DIV BOTÃO E CAMPO DE PESQUISA */
+    #div_header_4 {
+        margin: 0 auto;
+        grid-row: 4;
+        grid-column-start: 3;
+        grid-column-end: 5;  
+        margin-bottom: 10px;
+    }   
+    .botao_pesquisa img {
+        max-width: 13px;
+        max-height: 13px;
+    }
+    #campo_pesquisa {
+        width: 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        margin-left: 10px;
+        opacity: 0;
+        transition: width 0.4s ease, opacity 0.4s ease;
+        visibility: hidden;
+    }
+    #campo_pesquisa.show {  
+        width: 100px;
+        height: 7px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* TÍTULO E TEXTO DO CONTEÚDO */
+    .titulo_conteudo_h1 {
+        font-size: 0.8rem;
+    }    
+    .paragrafo_conteudo_p {
+        font-size: 0.5rem;
+    }
+
+    .main_conteudo_principal {
+        grid-area: main;
+        height: 100%;
+    }
+    /* DIV PRINCIPAL QUE RECEBE UM GRID PARA ORGANIZAR O CONTEÚDO */
+    .div_conteudo_principal {
+        display: grid;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
+    /* ID'S DAS OUTRAS PÁGINAS */
+    #posicao_conteudo_1 {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    #posicao_conteudo_2 {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    #posicao_conteudo_3 {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    #posicao_conteudo_4 {
+        grid-row: 4;
+        grid-column: 1;
+    }
+    /* ID'S DA PÁGINA INDEX */
+    #posicao_conteudo_1_imagem {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    #posicao_conteudo_2_texto {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    #posicao_conteudo_3_texto {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    #posicao_conteudo_4_imagem {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    /* TAMANHO MÁXIMO IMAGENS CONTEÚDO */
+    #imagem_conteudo_1, #imagem_conteudo_2 {
+        max-width: 100px;
+    }
+
+    /* RODAPÉ DA PÁGINA */
+    .footer_pagina {
+        font-size: 0.5rem;
+    }
+}
