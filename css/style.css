@@ -77,16 +77,6 @@
     grid-column: 3;
     text-align: center;
 }
-/* .class_titulo_site a {
-    text-decoration: none;
-    text-shadow: 2px 1px 1px black;
-    font-family: CAMPUS PERSONAL USE;
-    font-size: clamp(1.5em, 3em + 4vw, 5em);
-    color: rgb(255, 255, 255);
-    height: 100%;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-} */
 
 /* DIV LINKS DA PÁGINA */
 .div_links_header {
@@ -316,7 +306,7 @@ RESPONSIVO
           "main"
           "footer";
     
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 0fr auto 0fr;
         grid-template-columns: 1fr;
     }
 
@@ -422,7 +412,7 @@ RESPONSIVO
           "main"
           "footer";
     
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 0fr auto 0fr;
         grid-template-columns: 1fr;
     }
 
@@ -524,12 +514,13 @@ RESPONSIVO
 
 @media screen and (max-width: 425px){
     #section_conteudo_pagina{
+
         grid-template-areas:
           "header"
           "main"
           "footer";
     
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 0fr auto 0fr;
         grid-template-columns: 1fr;
     }
 
@@ -574,6 +565,7 @@ RESPONSIVO
         /* grid-column: 3; */
         grid-column-start: 3;
         grid-column-end: 5;
+        height: auto;
     }
     .ul_link_visivel a {
         font-size: 0.7rem;
