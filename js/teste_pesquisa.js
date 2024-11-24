@@ -7,75 +7,35 @@ window.onload = function() {
             "id":1,
             "nome":"Ectomorfo",
             "descricao":"Biotipo ectomorfo é caracterizado por uma baixa porcentagem de gordura corporal e uma alta porcentagem de massa muscular.",
-            "url":"../paginas/bio_ectomorfo.html"
+            "url":"./paginas/bio_ectomorfo.html"
         },
         {
             "id":2,
             "nome":"Mesomorfo",
             "descricao":"Biotipo mesomorfo é caracterizado por uma média porcentagem de gordura corporal e uma média porcentagem de massa muscular.",
-            "url":"../paginas/bio_mesomorfo.html"
+            "url":"./paginas/bio_mesomorfo.html"
         },
         {
             "id":3,
             "nome":"Endomorfo",
-            "descricao":"Biotipo endomorfo é caracterizado por uma alta porcentagem de gordura corporal e uma baixa porcentagem de massa muscular.",
-            "url":"../paginas/bio_endomorfo.html"
+            "descricao":"Biotipo endomorfo é caracterizado por uma alta porcentagem de gordura corporal e uma baixa porcentagem de massa muscular."
         }
         ],
         "treinos": [
         {
             "id":1,
             "nome":"Treino de Peito",
-            "descricao":"Treino de peito é um treino que visa desenvolver a musculatura do peito.",
-            "url":"../paginas/treino_peito.html"
+            "descricao":"Treino de peito é um treino que visa desenvolver a musculatura do peito.",            
         },
         {
             "id":2,
             "nome":"Treino de Costa",
-            "descricao":"Treino de costa é um treino que visa desenvolver a musculatura da costa.",
-            "url":"../paginas/treino_costa.html"
+            "descricao":"Treino de costa é um treino que visa desenvolver a musculatura da costa.",       
         },
         {
             "id":3,
             "nome":"Treino de Triceps",
-            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",
-            "url":"../paginas/treino_triceps.html"
-        },
-        {
-            "id":4,
-            "nome":"Treino de Biceps",
-            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",
-            "url":"../paginas/treino_biceps.html"
-        },
-        {
-            "id":5,
-            "nome":"Treino de Abdômen",
-            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",
-            "url":"../paginas/treino_abdomen.html"
-        },
-        {
-            "id":6,
-            "nome":"Treino de Panturrilha",
-            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",
-            "url":"../paginas/treino_panturrilha.html"
-        },
-        {
-            "id":7,
-            "nome":"Treino de Glúteo",
-            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",
-            "url":"../paginas/treino_gluteo.html"
-        },
-        {
-            "id":8,
-            "nome":"Treino de Perna",
-            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",
-            "url":"../paginas/treino_perna.html"
-        },
-        {
-            "id":9,
-            "nome":"Treino de Antebraço",
-            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",
-            "url":"../paginas/treino_antebraco.html"
+            "descricao":"Treino de triceps é um treino que visa desenvolver a musculatura dos triceps.",    
         }
         ]
     }
@@ -125,17 +85,17 @@ window.onload = function() {
 
           const resultadosHtml = resultados.map(treino => {
             return `
-                <div>
-                    <h2><a href="${treino.url}" target="_self">${treino.nome}</a></h2>
-                </div>`;
+              <h2><a href="${treino.url}" target="_blank">${treino.nome}</a></h2>
+              <p>${treino.descricao}</p>`              
+            ;
           }).join('');
 
           resultados_treinos.innerHTML = resultadosHtml;
-        } else {
-            resultados_treinos.innerHTML = ''; 
+        } else {        
+            resultados_treinos.innerHTML = '';            
         }
     }
-
+    
     // função que busca as informações sobre os biotipos
     function buscaBiotipos() {
 
@@ -148,9 +108,8 @@ window.onload = function() {
 
           const resultadosHtml = resultados.map(biotipo => {
             return `
-                <div>
-                    <h2><a href="${biotipo.url}" target="_self">${biotipo.nome}</a></h2>
-                </div>`;
+              <h2><a href="${biotipo.url}" target="_blank">${biotipo.nome}</a></h2>
+              <p>${biotipo.descricao}</p>`;
           }).join('');
 
           resultados_biotipos.innerHTML = resultadosHtml;
