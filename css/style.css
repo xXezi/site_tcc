@@ -220,33 +220,61 @@ NA PÁGINA INDEX*/
     grid-row: 2;
     grid-column: 2;
 }
-/* ID'S DE CADA DIV E POSICIONAMENTO DENTRO DO GRID
+/* ID's DE CADA DIV E POSICIONAMENTO DENTRO DO GRID
 NAS OUTRAS PÁGINAS */
 #posicao_conteudo_1 {
     grid-row: 1;
     grid-column: 1;
 }
-#posicao_conteudo_2 {
-    grid-row: 2;
-    grid-column: 1;
-}
+/**/
 #posicao_conteudo_3 {
     grid-row: 1;
     grid-column: 2;
 }
+/**/
 #posicao_conteudo_4 {
     grid-row: 2;
     grid-column: 2;
 }
-#posicao_conteudo_5 {
+
+/*ID's PAG SUPLEMENTOS*/
+#posicao_conteudo_supl_1_texto {
+    grid-row: 1;
+    grid-column: 1;
+}
+#posicao_conteudo_supl_2_texto {
+    grid-row: 2;
+    grid-column: 1;
+}
+#posicao_conteudo_supl_3_texto {
+    grid-row: 3;
+    grid-column: 1;
+}
+#posicao_conteudo_supl_4_texto {
+    grid-row: 4;
+    grid-column: 1;
+}
+#posicao_conteudo_supl_5_texto {
+    grid-row: 5;
+    grid-column: 1;
+}
+#posicao_conteudo_supl_1_imagem {
+    grid-row: 1;
+    grid-column: 2;
+}
+#posicao_conteudo_supl_2_imagem {
+    grid-row: 2;
+    grid-column: 2;
+}
+#posicao_conteudo_supl_3_imagem {
     grid-row: 3;
     grid-column: 2;
 }
-#posicao_conteudo_6 {
+#posicao_conteudo_supl_4_imagem {
     grid-row: 4;
     grid-column: 2;
 }
-#posicao_conteudo_7 {
+#posicao_conteudo_supl_5_imagem {
     grid-row: 5;
     grid-column: 2;
 }
@@ -340,21 +368,17 @@ RESPONSIVO
         /* grid-column: 2; */
         grid-column-start: 1;
         grid-column-end: 3;
-        /* position: relative; */
-        /* background-color: green; */
         margin: 0 auto;
     }
     #img_logo {
         max-width: 200px;
         max-height: 200px;
-        /* background-color: blue; */
     }
 
     /* TÍTULO DA PÁGINA */
     .div_titulo_pagina {
         grid-column-start: 3;
         grid-column-end: 5;
-        /* background-color: blue; */
     }
     .libre-baskerville-bold {
         font-family: "Libre Baskerville", serif;    
@@ -644,21 +668,73 @@ RESPONSIVO
         grid-template-columns: 1fr;
     }
     /* ID'S DAS OUTRAS PÁGINAS */
+    /* ID's DE CADA DIV E POSICIONAMENTO DENTRO DO GRID
+    NAS OUTRAS PÁGINAS */
     #posicao_conteudo_1 {
         grid-row: 1;
         grid-column: 1;
     }
-    #posicao_conteudo_2 {
-        grid-row: 3;
-        grid-column: 1;
-    }
+    /**/
     #posicao_conteudo_3 {
         grid-row: 2;
         grid-column: 1;
     }
+    /**/
     #posicao_conteudo_4 {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    /*ID's PAG SUPLEMENTOS*/
+    #posicao_conteudo_supl_1_texto {
+        grid-row: 1;
+        grid-column: 1;
+    }
+    #posicao_conteudo_supl_2_texto {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    #posicao_conteudo_supl_3_texto {
+        grid-row: 5;
+        grid-column: 1;
+    }
+    #posicao_conteudo_supl_4_texto {
+        grid-row: 7;
+        grid-column: 1;
+    }
+    #posicao_conteudo_supl_5_texto {
+        grid-row: 9;
+        grid-column: 1;
+    }
+    #posicao_conteudo_supl_1_imagem {
+        grid-row: 2;
+        grid-column: 1;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    #posicao_conteudo_supl_2_imagem {
         grid-row: 4;
         grid-column: 1;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    #posicao_conteudo_supl_3_imagem {
+        grid-row: 6;
+        grid-column: 1;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    #posicao_conteudo_supl_4_imagem {
+        grid-row: 8;
+        grid-column: 1;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    #posicao_conteudo_supl_5_imagem {
+        grid-row: 10;
+        grid-column: 1;
+        max-width: 200px;
+        margin: 0 auto;
     }
     /* ID'S DA PÁGINA INDEX */
     #posicao_conteudo_1_imagem {
@@ -680,7 +756,7 @@ RESPONSIVO
 
     /* TAMANHO MÁXIMO IMAGENS CONTEÚDO */
     #imagem_conteudo_1, #imagem_conteudo_2 {
-        max-width: 100px;
+        max-width: 120px;
     }
 
     /* RODAPÉ DA PÁGINA */
